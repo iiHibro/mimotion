@@ -28,6 +28,6 @@ jobs:
             AES_KEY: ${{ secrets.AES_KEY }}
             PAT: ${{ secrets.PAT }}
         run: |
-          pip3 install requests pycryptodome
+          # 新增 pytz 依赖安装，解决 ModuleNotFoundError 问题
+          pip3 install requests pycryptodome pytz
           python3 inspect_configs.py
-
